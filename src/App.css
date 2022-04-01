@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+header {
+  font-size: 2rem;
+}
+.top--header{
+  color: white;
+  font-family: cursive;
+  font-size: larger;
 }
 
-.App-logo {
-  height: 40vmin;
+header,
+form {
+  min-height: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.todo-input,
+.todo-button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+.todo-input{
+  overflow: auto;
+}
+.todo-button {
+  color: #ff6f47;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.todo-button:hover {
+  background: #ff6f47;
+  color: white;
+}
+.todo-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+.todo li {
+  flex: 1;
+  /* list-style: none; */
+  /* min-width: 100%; */
+}
+
+.trash-btn,
+.complete-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.col--custom{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+/*
+.select:hover::after {
+  transform: scale(1.5);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+*/
+/* @media only screen and (max-width: 600px) {
+  .todo-input{
+    width: 30vw;
   }
-  to {
-    transform: rotate(360deg);
+  .todo-list{
+    display: flex;
+    flex-direction: column;
+  }
+} */
+
+
+.filter-todo {
+  padding: 1rem;
+}
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+.select::after  {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+}
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+  color: white;
+} 
+
+@media only screen and (max-width: 480px) {
+   .col--custom{
+     width: 80vw !important;
+     margin-left: 30px;
+   }
+   .custom--row{
+     display: flex;
+     justify-content: space-evenly;
+   }
+   .select--custom{
+    width: inherit;
+   }
+   .filter-todo{
+     width: 100%;
+   }
+   .c--c--1{
+     margin-left: 30px;
+   }
+}
+@media only screen and (min-width: 767px){
+  .select--custom{
+    width: 60%;
+   }
+   .filter-todo{
+    width: 100%;
+  }
+  .cc--1{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .cc--2{
+    display: flex;
+    justify-content: flex-start;
   }
 }
